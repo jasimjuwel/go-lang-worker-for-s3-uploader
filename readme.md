@@ -12,6 +12,7 @@ To handle this large-scale operation, the worker utilizes multi-threaded Go rout
 - Docker
 - Docker Compose
 - Redis
+- Go Air
 
 ## Installation (Docker based)
 
