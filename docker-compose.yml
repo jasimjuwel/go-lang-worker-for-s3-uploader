@@ -1,0 +1,22 @@
+version: '3.8'
+name: go-docker-service
+networks:
+  default:
+    driver: bridge
+  common-net:
+    external: true
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/app  
+    env_file:
+      - .env  
+    networks:
+      common-net:
+        aliases:
+          - go-docker-service
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
